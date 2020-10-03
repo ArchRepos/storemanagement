@@ -28,9 +28,16 @@ public class Store implements ProductControls, UserControls {
         // find product by productNumber
         // update its fields
         // save it
-        Product oldProduct = getProduct(updatedProduct.getProductNumber());
-        products.remove(oldProduct);
-        products.add(updatedProduct);
+        Product oldProduct = null;
+        try {
+            oldProduct = getProduct(updatedProduct.getProductNumber());
+            products.remove(oldProduct);
+            products.add(updatedProduct);
+        } catch (Exception e) {
+            System.out.println("Sorry, we can not find product that you want to update. Please check again!");
+            // e.printStackTrace();
+        }
+
 
     }
 
@@ -46,12 +53,14 @@ public class Store implements ProductControls, UserControls {
         return null;
     }
 
-    public Product getProduct(String productNumber) {
+    public Product getProduct(String productNumber) throws Exception{
         Product p = null;
         for (Product product: products) {
             if (product.getProductNumber().equals(productNumber))
                 p = product;
         }
+        if (p == null)
+            throw new Exception("Product not found!");
         return p;
     }
 

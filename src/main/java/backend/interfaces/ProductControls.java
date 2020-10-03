@@ -11,5 +11,5 @@ public interface ProductControls {
     public void sellProduct(Product product);
     public ArrayList<Product> listProducts();
     public ArrayList<Product> listProducts(String type);
-    public Product getProduct(String productNumber);
+    public Product getProduct(String productNumber) throws Exception;
 }

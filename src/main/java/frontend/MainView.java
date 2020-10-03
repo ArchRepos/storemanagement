@@ -26,15 +26,15 @@ public class MainView {
         someStore.addProduct(rice);
         someStore.addProduct(shirts);
         someStore.addProduct(hat);
-
+        
         System.out.println("I am searchin for product  0001");
-        System.out.println(someStore.getProduct("0001"));
+       // System.out.println(someStore.getProduct("0001"));
 
         System.out.println("List of products!");
         System.out.println(someStore.listProducts());
 
         System.out.println("Updating product 0002");
-        Product shirtsNew = new Clothes("0002", "Shirts", 30.0, 35.0, "S", "Banana");
+        Product shirtsNew = new Clothes("0004", "Shirts", 30.0, 35.0, "S", "Banana");
         someStore.updateProduct(shirtsNew);
 
         System.out.println("List of products!");

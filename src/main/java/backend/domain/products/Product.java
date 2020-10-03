@@ -7,6 +7,8 @@ public class Product implements Comparable<Product>{
     private Double cost;
     private Double price;
 
+    public Product(){}
+
     public Product(String productNumber, String productName, Double cost, Double price) {
         this.productNumber = productNumber;
         this.productName = productName;
